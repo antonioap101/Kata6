@@ -96,8 +96,6 @@ public class BoardTests {
                                                             {DEAD, DEAD, DEAD},
                                                             {ALIVE, DEAD, ALIVE}};
 
-
-
     }
 
 }
