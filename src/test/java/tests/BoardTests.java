@@ -49,6 +49,19 @@ public class BoardTests {
         assertThat(state).isEqualTo(allDead2x2);
     }
 
+    @Test
+    public void all_dead_3x3_should_return_all_dead_3x3(){
+        String[][] state = new Board(allDead3x3).next().state();
+        assertThat(state).isEqualTo(allDead3x3);
+    }
+
+    @Test
+    public void all_alive_3x3_should_return_alive_in_corners_3x3(){
+        String[][] state = new Board(allAlive3x3).next().state();
+        assertThat(state).isEqualTo(aliveInCorners3x3);
+    }
+
+
 
     public static final class Cases {
         private static final String DEAD = ".";
@@ -70,6 +83,20 @@ public class BoardTests {
 
         public static final String[][] diagonal2x2 = {{ALIVE, DEAD},
                                                       {DEAD, ALIVE}};
+
+        public static final String[][] allDead3x3 = {{DEAD, DEAD, DEAD},
+                                                     {DEAD, DEAD, DEAD},
+                                                     {DEAD, DEAD, DEAD}};
+
+        public static final String[][] allAlive3x3 = {{ALIVE, ALIVE, ALIVE},
+                                                     {ALIVE, ALIVE, ALIVE},
+                                                     {ALIVE, ALIVE, ALIVE}};
+
+        public static final String[][] aliveInCorners3x3 = {{ALIVE, DEAD, ALIVE},
+                                                            {DEAD, DEAD, DEAD},
+                                                            {ALIVE, DEAD, ALIVE}};
+
+
 
     }
 
